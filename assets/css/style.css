@@ -1,0 +1,18 @@
+
+/* Homepage Styling */
+
+div {
+    border: 1px white solid;
+}
+
+#logo {
+    height: 200px;
+}
+
+#pokeball {
+    height: 40vw;
+}
+
+#interface_preview {
+    height: 30vw;
+}

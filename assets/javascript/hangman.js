@@ -31,7 +31,7 @@ function initializeGame() {
   correctLetters = [];
   wrongLetters = [];
   guessesLeft = 10;
-  pokemonImage.src = '/assets/pokeBall.png';
+  pokemonImage.src = 'assets/images/pokeball.png';
   // pokemonImage.style.display = 'none';
   messageElement.innerText = '';
   playAgainButton.style.display = 'none';
@@ -67,7 +67,7 @@ function createAlphabetButtons() {
   alphabet.split('').forEach(letter => {
     const button = document.createElement('button');
     button.innerText = letter;
-    button.classList.add('letter-button');
+    button.classList.add('nes-btn');
     button.addEventListener('click', () => handleGuess(letter, button));
     alphabetContainer.appendChild(button);
   });
