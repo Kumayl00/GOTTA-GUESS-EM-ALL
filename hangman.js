@@ -19,7 +19,12 @@ function fetchPokemon() {
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
+      //override names for "nidoran-f" and "nidoran-m"
+      if (data.name.toLowerCase() ==="nidoran-f" || data.name.toLowerCase() === "nidoran-m") {
+        randomWord = "nidoran";
+      } else{
       randomWord = data.name.toLowerCase();
+      }
       randomImage = data.sprites.front_default;
       initializeGame();
     })
