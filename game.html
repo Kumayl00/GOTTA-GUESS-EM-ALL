@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Hangman</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    #word {
+      font-size: 2rem;
+      margin: 20px;
+    }
+    #alphabet-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 20px;
+    }
+    .letter-button {
+      margin: 5px;
+      padding: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .letter-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    #wrong-letters {
+      margin: 20px;
+      color: red;
+    }
+    #pokemon-image {
+      /* display: none; */
+      margin-top: 20px;
+      width: 150px;
+      height: 150px;
+    }
+    #message {
+      font-size: 1.5rem;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pokémon Hangman</h1>
+  <div class="imgContainer">
+  <img id="pokemon-image" alt="Pokémon" src="/assets/pokeBall.png">
+</div>
+  <div id="word"></div>
+  <div id="alphabet-container"></div>
+  <div id="wrong-letters">Wrong letters: <span id="wrong-letters-list"></span></div>
+  <div>Guesses left: <span id="guesses-left">10</span></div>
+
+  <div id="message"></div>
+  <button id="play-again" style="display: none;">Play Again</button>
+
+  <script src="hangman.js"></script>
+</body>
+</html>
