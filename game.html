@@ -10,55 +10,80 @@
       text-align: center;
       margin: 20px;
     }
+
     #word {
       font-size: 2rem;
       margin: 20px;
+      text-align: center;
     }
     #alphabet-container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 20px;
+      margin: 2rem 5rem;
     }
-    .letter-button {
+    .nes-btn {
       margin: 5px;
       padding: 10px;
       font-size: 1rem;
       cursor: pointer;
     }
-    .letter-button:disabled {
+    .nes-btn:disabled {
       background-color: #ccc;
       cursor: not-allowed;
     }
+
     #wrong-letters {
       margin: 20px;
       color: red;
+      text-align: center;
     }
+
     #pokemon-image {
-      /* display: none; */
-      margin-top: 20px;
+      margin: 2rem
       width: 150px;
       height: 150px;
     }
+
     #message {
       font-size: 1.5rem;
       margin-top: 20px;
     }
+
+    #guesses-left-div {
+      text-align: center;
+    }
+
+    #imgContainer {
+      display: flex;
+      justify-content: center;
+    }
+
+
+#heading {
+  text-align: center;
+  margin: 1rem;
+}
+
   </style>
+
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+
 </head>
 <body>
-  <h1>Pokémon Hangman</h1>
-  <div class="imgContainer">
-  <img id="pokemon-image" alt="Pokémon" src="/assets/pokeBall.png">
+  <h1 id="heading">Pokémon Hangman</h1>
+  <div id="imgContainer">
+  <img id="pokemon-image" alt="Pokémon" src="assets/images/pokeball.png">
 </div>
   <div id="word"></div>
   <div id="alphabet-container"></div>
   <div id="wrong-letters">Wrong letters: <span id="wrong-letters-list"></span></div>
-  <div>Guesses left: <span id="guesses-left">10</span></div>
+  <div id="guesses-left-div">Guesses left: <span id="guesses-left">10</span></div>
 
   <div id="message"></div>
   <button id="play-again" style="display: none;">Play Again</button>
 
-  <script src="hangman.js"></script>
+  <script src="assets/javascript/hangman.js"></script>
 </body>
 </html>
