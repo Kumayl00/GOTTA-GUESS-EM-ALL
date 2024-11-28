@@ -1,3 +1,4 @@
+=======
 #Gotta Guess 'Em All!
 
 ##Chosen Idea
@@ -55,5 +56,4 @@ Instructions modal launched on the homepage
 ##Game Screen
 ![layout of the interface when the user is playing the game](assets/images/Game-Guessing.png)
 Game interface design
-
 
