@@ -56,3 +56,19 @@ Instructions modal launched on the homepage
 ##Game Screen
 ![layout of the interface when the user is playing the game](assets/images/Game-Guessing.png)
 Game interface design
+
+##Game Success
+![wireframe showing the screen with a completed answer](assets/images/Game-Success.png)
+Completed game - sprite of the guessed Pokemon is shown
+
+#Assets
+We chose assets that were in-keeping with the Pokemon aesthetic.
+
+##Fonts
+We chose the 'PocketMonk' and 'Pokemon Classic' fonts for this project. 
+
+##Colour Scheme
+
+![picture showing swatch of colour scheme. similar to Pokemon colours](assets/images/color_scheme.jpeg)
+
+A colour scheme similar to the branding of the original Pokemon was used. This was taken from Adobe Colours.
