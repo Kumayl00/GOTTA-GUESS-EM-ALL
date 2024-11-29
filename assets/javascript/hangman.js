@@ -26,7 +26,7 @@ let pokemonAbility2 = '';
 function fetchPokemon() {
   randomId = Math.floor(Math.random() * 1010) + 1; // First 150 Pokémon
 
-  fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon/775/`)
     .then(response => response.json())
     .then(data => {
       //override names for "nidoran-f" and "nidoran-m and mr-mime"
@@ -112,8 +112,8 @@ function fetchPokemon() {
       pokemonType = data.types[0].type.name;
       pokemonHeight = data.height;
       pokemonWeight = data.weight;
-      pokemonAbility1 = data.abilities[0].ability.name;
-      pokemonAbility2 = data.abilities[1].ability.name;
+      pokemonAbility1 = data.abilities[0]?.ability.name || 'N/A';
+      pokemonAbility2 = data.abilities[1]?.ability.name || 'N/A';
 
       //for testing
       console.log(data.id);
@@ -121,8 +121,8 @@ function fetchPokemon() {
       console.log(data.types[0].type.name);
       console.log(data.height);
       console.log(data.weight);
-      console.log(data.abilities[0].ability.name);
-      console.log(data.abilities[1].ability.name);
+      console.log(data.abilities[0]?.ability.name || 'N/A');
+      console.log(data.abilities[1]?.ability.name || 'N/A');
       initializeGame();
     })
     .catch(error => console.error('Error fetching Pokémon:', error));
