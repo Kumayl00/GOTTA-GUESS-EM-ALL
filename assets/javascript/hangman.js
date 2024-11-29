@@ -8,7 +8,7 @@ const playAgainButton = document.getElementById('play-again');
 const correctSound = new Audio('assets/audio/SFX_INTRO_HOP.wav'); // Correct guess sound
 const wrongSound = new Audio('assets/audio/SFX_DENIED.wav');     // Wrong guess sound
 const bgMusic = new Audio('assets/audio/team_rocket_background.mp3');   // Background music
-const gameOverSound = new Audio('assets/audio/game_over.mp3');
+const gameOverSound = new Audio('assets/audio/SFX_SS_ANNE_HORN.wav');
 
 let randomWord = '';
 let randomImage = '';
