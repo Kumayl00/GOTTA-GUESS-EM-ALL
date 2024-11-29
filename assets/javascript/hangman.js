@@ -5,6 +5,9 @@ const guessesLeftElement = document.getElementById('guesses-left');
 const pokemonImage = document.getElementById('pokemon-image');
 const messageElement = document.getElementById('message');
 const playAgainButton = document.getElementById('play-again');
+const correctSound = new Audio('sounds/correct.mp3'); // Correct guess sound
+const wrongSound = new Audio('sounds/wrong.mp3');     // Wrong guess sound
+const bgMusic = new Audio('assets/audio/team_rocket_background.mp3');   // Background music
 
 let randomWord = '';
 let randomImage = '';
@@ -15,7 +18,10 @@ let guessesLeft = 10;
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
   const randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
-
+   // Start or restart background music
+  bgMusic.loop = true; // Loop the background music
+  bgMusic.volume = 0.3; // Set the volume to 30%
+  bgMusic.play(); // Play the music
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
@@ -78,10 +84,14 @@ function handleGuess(letter, button) {
   button.disabled = true;
   if (randomWord.includes(letter)) {
     correctLetters.push(letter);
+    correctSound.currentTime = 0; // Reset the sound if played before
+    correctSound.play(); // Play correct guess sound
     displayWord();
   } else {
     wrongLetters.push(letter);
     guessesLeft--;
+    wrongSound.currentTime = 0; // Reset the sound if played before
+    wrongSound.play(); // Play wrong guess sound
     guessesLeftElement.innerText = guessesLeft;
     wrongLettersElement.innerText = wrongLetters.join(', ');
     if (guessesLeft === 0) {
@@ -96,11 +106,14 @@ function endGame() {
   document.querySelectorAll('.letter-button').forEach(button => {
     button.disabled = true;
   });
+  bgMusic.pause(); // Pause the background music
   playAgainButton.style.display = 'inline';
 }
 
 // Add event listener for Play Again button
 playAgainButton.addEventListener('click', () => {
+  bgMusic.currentTime = 0; // Reset the music to the beginning
+  bgMusic.play(); // Play the music again
   fetchPokemon();
 });
 
