@@ -29,7 +29,7 @@ function fetchPokemon() {
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
-      //override names for "nidoran-f" and "nidoran-m"
+      //override names for "nidoran-f" and "nidoran-m and mr-mime"
       if (data.name.toLowerCase() ==="nidoran-f" || data.name.toLowerCase() === "nidoran-m") {
         randomWord = "nidoran";
       } else if (data.name.toLowerCase() === "mr-mime") { 
