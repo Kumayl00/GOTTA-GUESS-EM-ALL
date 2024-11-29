@@ -26,7 +26,7 @@ let pokemonAbility2 = '';
 function fetchPokemon() {
   randomId = Math.floor(Math.random() * 1010) + 1; // First 150 Pokémon
 
-  fetch(`https://pokeapi.co/api/v2/pokemon/700/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
       //override names for "nidoran-f" and "nidoran-m and mr-mime"
@@ -116,6 +116,7 @@ function fetchPokemon() {
       pokemonAbility2 = data.abilities[1].ability.name;
 
       //for testing
+      console.log(data.id);
       console.log(data.name);
       console.log(data.types[0].type.name);
       console.log(data.height);
