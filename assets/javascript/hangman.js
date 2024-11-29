@@ -24,18 +24,86 @@ let pokemonAbility2 = '';
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
-  randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
+  randomId = Math.floor(Math.random() * 1010) + 1; // First 150 Pokémon
 
-  fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
+  fetch(`https://pokeapi.co/api/v2/pokemon/700/`)
     .then(response => response.json())
     .then(data => {
       //override names for "nidoran-f" and "nidoran-m and mr-mime"
-      if (data.name.toLowerCase() ==="nidoran-f" || data.name.toLowerCase() === "nidoran-m") {
-        randomWord = "nidoran";
-      } else if (data.name.toLowerCase() === "mr-mime") { 
-        randomWord = "mrmime"
-      } else{
-      randomWord = data.name.toLowerCase();
+      const nameOverrides = {
+        "nidoran-f": "nidoran",
+        "nidoran-m": "nidoran",
+        "mr-mime": "mrmime",
+        "deoxys-normal": "deoxys",
+        "wormadam-plant": "wormadam",
+        "mime-jr": "mimejr",
+        "porygon-z": "porygonz",
+        "giratina-altered": "giratina",
+        "shaymin-land": "shaymin",
+        "basculin-red-striped": "basculin",
+        "darmanitan-standard": "darmanitan",
+        "tornadus-incarnate": "tornadus",
+        "thundurus-incarnate": "thundurus",
+        "landorus-incarnate": "landorus",
+        "keldeo-ordinary": "keldeo",
+        "meloetta-aria": "meloetta",
+        "meowstic-male": "meowstic",
+        "pumpkaboo-average": "pumpkaboo",
+        "gourgeist-average": "gourgeist",
+        "zygarde-50": "zygarde",
+        "oricorio-baile": "oricorio",
+        "lycanroc-midday": "lycanroc",
+        "wishiwashi-solo": "wishiwashi",
+        "type-null": "typenull",
+        "minior-red-meteor": "minior",
+        "mimikyu-disguised": "mimikyu",
+        "jangmo-o": "jangmoo",
+        "hakamo-o": "hakamoo",
+        "kommo-o": "kommoo",
+        "tapu-koko": "tapukoko",
+        "tapu-lele": "tapulele",
+        "tapu-bulu": "tapubulu",
+        "tapu-fini": "tapufini",
+        "toxtricity-amped": "toxtricity",
+        "sirfetchd": "sirfetchd", // Already standardized
+        "mr-rime": "mrrime",
+        "eiscue-ice": "eiscue",
+        "indeedee-male": "indeedee",
+        "morpeko-full-belly": "morpeko",
+        "urshifu-single-strike": "urshifu",
+        "enamorus-incarnate": "enamorus",
+        "oinkologne-male": "oinkologne",
+        "maushold-family-of-four": "maushold",
+        "squawkabilly-green-plumage": "squawkabilly",
+        "palafin-zero": "palafin",
+        "tatsugiri-curly": "tatsugiri",
+        "dudunsparce-two-segment": "dudunsparce",
+        "great-tusk": "greattusk",
+        "scream-tail": "screamtail",
+        "brute-bonnet": "brutebonnet",
+        "flutter-mane": "fluttermane",
+        "slither-wing": "slitherwing",
+        "sandy-shocks": "sandyshocks",
+        "iron-treads": "irontreads",
+        "iron-bundle": "ironbundle",
+        "iron-hands": "ironhands",
+        "iron-jugulis": "ironjugulis",
+        "iron-moth": "ironmoth",
+        "iron-thorns": "ironthorns",
+        "wo-chien": "wochien",
+        "chien-pao": "chienpao",
+        "ting-lu": "tinglu",
+        "chi-yu": "chiyu",
+        "roaring-moon": "roaringmoon",
+        "iron-valiant": "ironvaliant",
+        "walking-wake": "walkingwake",
+        "iron-leaves": "ironleaves"
+      };
+      
+      if (nameOverrides[data.name.toLowerCase()]) {
+        randomWord = nameOverrides[data.name.toLowerCase()];
+      } else {
+        randomWord = data.name.toLowerCase();
       }
       randomImage = data.sprites.front_default;
 
@@ -94,9 +162,19 @@ function displayWord() {
     `;
     // pokemonImage.style.display = 'block';
     // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
-    const audio = new Audio(`https://pokemoncries.com/cries-old/${randomId}.mp3`);
-    audio.play();
-    endGame();
+   // Check the value of randomId and set the appropriate URL
+const audioUrl = randomId < 650 
+? `https://pokemoncries.com/cries-old/${randomId}.mp3` 
+: `https://pokemoncries.com/cries/${randomId}.mp3`;
+
+// Create a new Audio object using the selected URL
+const audio = new Audio(audioUrl);
+
+// Play the audio
+audio.play();
+
+// Call endGame function
+endGame();
   }
 }
 
