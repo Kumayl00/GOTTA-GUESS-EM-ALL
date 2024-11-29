@@ -23,10 +23,13 @@ function fetchPokemon() {
       //override names for "nidoran-f" and "nidoran-m"
       if (data.name.toLowerCase() ==="nidoran-f" || data.name.toLowerCase() === "nidoran-m") {
         randomWord = "nidoran";
+      } else if (data.name.toLowerCase() === "mr-mime") { 
+        randomWord = "mrmime"
       } else{
       randomWord = data.name.toLowerCase();
       }
       randomImage = data.sprites.front_default;
+      console.log(data.name);
       initializeGame();
     })
     .catch(error => console.error('Error fetching Pokémon:', error));
