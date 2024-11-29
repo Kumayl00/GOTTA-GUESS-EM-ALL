@@ -5,6 +5,7 @@ const guessesLeftElement = document.getElementById('guesses-left');
 const pokemonImage = document.getElementById('pokemon-image');
 const messageElement = document.getElementById('message');
 const playAgainButton = document.getElementById('play-again');
+const pokemonStats = document.getElementById('pokemon-stats');
 
 let randomId;
 let randomWord = '';
@@ -12,6 +13,14 @@ let randomImage = '';
 let correctLetters = [];
 let wrongLetters = [];
 let guessesLeft = 10;
+
+//pokemon stat variables
+let pokemonName = '';
+let pokemonType = '';
+let pokemonHeight = '';
+let pokemonWeight = '';
+let pokemonAbility1 = '';
+let pokemonAbility2 = '';
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
@@ -29,7 +38,22 @@ function fetchPokemon() {
       randomWord = data.name.toLowerCase();
       }
       randomImage = data.sprites.front_default;
+
+      //pokemon stats
+      pokemonName = data.name;
+      pokemonType = data.types[0].type.name;
+      pokemonHeight = data.height;
+      pokemonWeight = data.weight;
+      pokemonAbility1 = data.abilities[0].ability.name;
+      pokemonAbility2 = data.abilities[1].ability.name;
+
+      //for testing
       console.log(data.name);
+      console.log(data.types[0].type.name);
+      console.log(data.height);
+      console.log(data.weight);
+      console.log(data.abilities[0].ability.name);
+      console.log(data.abilities[1].ability.name);
       initializeGame();
     })
     .catch(error => console.error('Error fetching Pokémon:', error));
@@ -60,6 +84,13 @@ function displayWord() {
   if (wordElement.innerText.replace(/\s/g, '') === randomWord) {
     messageElement.innerText = 'Congratulations! You guessed the Pokémon!';
     pokemonImage.src = randomImage;
+    pokemonStats.innerHTML = `
+      <h3>${pokemonName}</h3>
+      <p>Type: ${pokemonType}</p>
+      <p>Height: ${pokemonHeight} dm</p>
+      <p>Weight: ${pokemonWeight} hg</p>
+      <p>Abilities: ${pokemonAbility1}, ${pokemonAbility2}</p>
+    `;
     // pokemonImage.style.display = 'block';
     // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
     const audio = new Audio(`https://pokemoncries.com/cries-old/${randomId}.mp3`);
