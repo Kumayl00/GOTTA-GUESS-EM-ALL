@@ -70,6 +70,7 @@ function initializeGame() {
   playAgainButton.style.display = 'none';
   guessesLeftElement.innerText = guessesLeft;
   wrongLettersElement.innerText = '';
+  pokemonStats.innerHTML = '';
   displayWord();
   createAlphabetButtons();
 }
