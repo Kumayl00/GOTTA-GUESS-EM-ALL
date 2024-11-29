@@ -98,6 +98,8 @@ function handleGuess(letter, button) {
     
 
     if (guessesLeft === 0) {
+      gameOverSound.pause();
+      gameOverSound.currentTime = 0;
       gameOverSound.play();
       messageElement.innerText = `Game Over! The Pokémon was "${randomWord}".`;
       endGame();
