@@ -38,6 +38,7 @@ function fetchPokemon() {
         "wormadam-plant": "wormadam",
         "mime-jr": "mimejr",
         "porygon-z": "porygonz",
+        "porygon2": "porygon",
         "giratina-altered": "giratina",
         "shaymin-land": "shaymin",
         "basculin-red-striped": "basculin",
