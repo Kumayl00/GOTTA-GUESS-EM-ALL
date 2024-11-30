@@ -154,6 +154,7 @@ function displayWord() {
   if (wordElement.innerText.replace(/\s/g, '') === randomWord) {
     messageElement.innerText = 'Congratulations! You guessed the Pokémon!';
     pokemonImage.src = randomImage;
+    pokemonImage.alt = ` picture of ${randomWord}`;
     pokemonStats.innerHTML = `
       <h3>${pokemonName}</h3>
       <p>Type: ${pokemonType}</p>
@@ -161,7 +162,7 @@ function displayWord() {
       <p>Weight: ${pokemonWeight} hg</p>
       <p>Abilities: ${pokemonAbility1}, ${pokemonAbility2}</p>
     `;
-    // pokemonImage.style.display = 'block';
+
     // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
    // Check the value of randomId and set the appropriate URL
 const audioUrl = randomId < 650 
