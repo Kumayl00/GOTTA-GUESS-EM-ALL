@@ -146,6 +146,9 @@ The audio.play() function then plays the Pokemon's cry sound.
 ### Game Page
 ![screenshot of lighthouse validation on game page](assets/images/lighthouse_game.png)
 
+#Use of AI
+AI was very useful in streamlining our workflow and enhancing productivity. We used GitHub Copilot extensively to debug our code, enabling us to quickly identify and fix errors. We also used AI to analyze the dataset of 1010 Pokémon, scanning for inconsistencies and unusual naming conventions. This saved us hours of times in creating the datamap what corrects for the inconsitencies in the naming conventions.  The integration of AI tools allowed us to tackle challenges more effectively and focus on delivering innovative solutions.
+
 # Summary
 Our project combines several elements to create an engaging Pokemon guessing game:
 - It uses the PokeAPI to dynamically select Pokemon and retrieve their information.
