@@ -14,7 +14,7 @@
     <!-- <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css"> -->
 
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+    <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet">
 
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
@@ -94,6 +94,58 @@
             </div>
         </div>
     </div>
+
+    <div class="col-12 mb-4">
+        <button type="button" class="nes-btn is-secondary col-10" data-bs-toggle="modal"
+            data-bs-target="#aboutModal">About</button>
+    </div>
+    
+    <!-- About Modal -->
+    <div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="aboutModalLabel">About</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <!-- Resources Section -->
+                    <h5>Resources:</h5>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/images/poke-api.png" alt="Resource logo" style="width: 20px; margin-right: 10px;">
+                        <a href="https://pokeapi.co" target="_blank" class="text-decoration-none">Poke Api</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="assets/images/pokemon-cries.jpg" alt="Resource logo" style="width: 20px; margin-right: 10px;">
+                        <a href="https://pokemoncries.com" target="_blank" class="text-decoration-none">Pokemon cries</a>
+                    </div>
+                </div>
+
+                <div class="modal-body">
+                    <!-- Collaborators Section -->
+                    <h5>Developers:</h5>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/images/github-logo.png" alt="Collaborator logo" style="width: 20px; margin-right: 10px;">
+                        <a href="https://github.com/funktotheface" target="_blank" class="text-decoration-none">Douglas</a>
+                    </div>
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="assets/images/github-logo.png" alt="Collaborator logo" style="width: 20px; margin-right: 10px;">
+                        <a href="https://github.com/Georgeburn94" target="_blank" class="text-decoration-none">George</a>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <img src="assets/images/github-logo.png" alt="Collaborator logo" style="width: 20px; margin-right: 10px;">
+                        <a href="https://github.com/Kumayl00" target="_blank" class="text-decoration-none">Kumayl</a>
+                    </div>
+                </div>
+                <div class="modal-footer align-self-center">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+     
 
     <!-- Bootstrap Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
