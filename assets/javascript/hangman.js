@@ -146,13 +146,13 @@ function fetchPokemon() {
       pokemonAbility2 = data.abilities[1]?.ability.name || 'N/A';
 
       //for testing
-      console.log(data.id);
-      console.log(data.name);
-      console.log(data.types[0].type.name);
-      console.log(data.height);
-      console.log(data.weight);
-      console.log(data.abilities[0]?.ability.name || 'N/A');
-      console.log(data.abilities[1]?.ability.name || 'N/A');
+      // console.log(data.id);
+      // console.log(data.name);
+      // console.log(data.types[0].type.name);
+      // console.log(data.height);
+      // console.log(data.weight);
+      // console.log(data.abilities[0]?.ability.name || 'N/A');
+      // console.log(data.abilities[1]?.ability.name || 'N/A');
       initializeGame();
     })
     .catch(error => console.error('Error fetching Pokémon:', error));
