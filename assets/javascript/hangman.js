@@ -163,7 +163,7 @@ function initializeGame() {
   correctLetters = [];
   wrongLetters = [];
   guessesLeft = 10;
-  pokemonImage.src = '/assets/images/pokeball.png';
+  pokemonImage.src = 'assets/images/pokeball.png';
   // pokemonImage.style.display = 'none';
   messageElement.innerText = '';
   playAgainButton.style.display = 'none';
