@@ -16,3 +16,12 @@ div {
 #interface_preview {
     height: 30vw;
 }
+ 
+
+#modalBall img {
+    max-width: 100%; /* Ensures the image scales down within the modal */
+    height: auto;    /* Maintains the aspect ratio */
+    display: block;  /* Centers the image block-wise */
+    margin: 0 auto;  /* Horizontally centers the image */
+    max-height: 70vh; /* Prevents the image from being too tall for the viewport */
+  }
