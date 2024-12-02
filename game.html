@@ -107,7 +107,7 @@
   
     <h1 id="heading">Pokémon Hangman</h1>
     <div id="imgContainer">
-    <span><img id="pokemon-image" alt="" src="/assets/images/pokeball.png"></span>
+    <span><img id="pokemon-image" alt="" src="../assets/images/pokeball.png"></span>
     <span id="pokemon-stats"></span>
   </div>
     <div id="word"></div>
@@ -149,7 +149,7 @@
   <script>
     const musicToggleBtn = document.getElementById('music-toggle');
     let isMusicPlaying = true;  // Initially set to true since the music will start playing when the page loads
-    const backgroundMusic = new Audio('/assets/audio/team_rocket_background.mp3');
+    const backgroundMusic = new Audio('../assets/audio/team_rocket_background.mp3');
   
     // Preload the audio and loop it for continuous play
     backgroundMusic.loop = true;
