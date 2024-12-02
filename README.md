@@ -144,7 +144,7 @@ The audio.play() function then plays the Pokemon's cry sound.
 ![screenshot of lighthouse validation on index](assets/images/lighthouse_index.jpg)
 
 ### Game Page
-![screenshot of lighthouse validation on game page](assets/images/lighthouse_game.jpg)
+![screenshot of lighthouse validation on game page](assets/images/lighthouse_game.png)
 
 # Summary
 Our project combines several elements to create an engaging Pokemon guessing game:
