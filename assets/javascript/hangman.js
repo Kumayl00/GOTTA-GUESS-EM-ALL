@@ -11,6 +11,19 @@ const wrongSound = new Audio('assets/audio/SFX_DENIED.wav');     // Wrong guess 
 const bgMusic = new Audio('assets/audio/team_rocket_background.mp3');   // Background music
 const gameOverSound = new Audio('assets/audio/SFX_SS_ANNE_HORN.wav');
 
+// Generation ranges for Pokémon
+const generationRanges = {
+  1: [1, 151],
+  2: [152, 251],
+  3: [252, 386],
+  4: [387, 493],
+  5: [494, 649],
+  6: [650, 721],
+  7: [722, 809],
+  8: [810, 898],
+  9: [899, 1010],
+};
+
 let randomId;
 let randomWord = '';
 let randomImage = '';
@@ -28,7 +41,15 @@ let pokemonAbility2 = '';
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
-   randomId = Math.floor(Math.random() * 1010) + 1; // First 150 Pokémon
+  // Get the selected generation
+  const generationSelect = document.getElementById('generation-select');
+  const selectedGeneration = generationSelect.value;
+
+  // Get the range for the selected generation
+  const [minId, maxId] = generationRanges[selectedGeneration];
+
+  // Generate a random ID within the selected range
+  randomId = Math.floor(Math.random() * (maxId - minId + 1)) + minId;
    // Start or restart background music
   bgMusic.loop = true; // Loop the background music
   bgMusic.volume = 0.3; // Set the volume to 30%
@@ -243,6 +264,10 @@ function endGame() {
 playAgainButton.addEventListener('click', () => {
   bgMusic.currentTime = 0; // Reset the music to the beginning
   bgMusic.play(); // Play the music again
+  fetchPokemon();
+});
+
+document.getElementById('generation-select').addEventListener('change', () => {
   fetchPokemon();
 });
 
