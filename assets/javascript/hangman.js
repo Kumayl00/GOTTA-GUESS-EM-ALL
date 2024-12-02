@@ -195,8 +195,7 @@ function displayWord() {
 
     // Play Pokémon cry this uses the pokemoncries website and the randomId to get the cry
    // Check the value of randomId and set the appropriate URL
-const audioUrl = randomId < 650 
-? `https://pokemoncries.com/cries-old/${randomId}.mp3` 
+const audioUrl = randomId < 650 ? `https://pokemoncries.com/cries-old/${randomId}.mp3` 
 : `https://pokemoncries.com/cries/${randomId}.mp3`;
 
 // Create a new Audio object using the selected URL
