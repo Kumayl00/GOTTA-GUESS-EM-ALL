@@ -28,7 +28,7 @@ let pokemonAbility2 = '';
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
-  const randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
+   randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
    // Start or restart background music
   bgMusic.loop = true; // Loop the background music
   bgMusic.volume = 0.3; // Set the volume to 30%
