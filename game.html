@@ -91,6 +91,11 @@
       text-align: center;
     }
 
+    #music-toggle-container {
+      margin: 20px;
+      text-align: center;
+    }
+
   </style>
 
 <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
@@ -129,8 +134,40 @@
         <option value="10">Guess Em' All! (1-1010)</option>
       </select>
     </div>
+
+    <!-- Add the button here -->
+    <div id="music-toggle-container">
+      <button id="music-toggle">Toggle Music</button>
+    </div>
+
 </div>
 
   <script src="assets/javascript/hangman.js"></script>
+
+  
+  <script>
+    const musicToggleBtn = document.getElementById('music-toggle');
+    let isMusicPlaying = true;  // Initially set to true since the music will start playing when the page loads
+    const backgroundMusic = new Audio('/assets/audio/team_rocket_background.mp3');
+  
+    // Preload the audio and loop it for continuous play
+    backgroundMusic.loop = true;
+  
+    // Play the background music as soon as the page loads
+    backgroundMusic.play();
+  
+    musicToggleBtn.addEventListener('click', () => {
+      if (isMusicPlaying) {
+        backgroundMusic.pause();
+        musicToggleBtn.textContent = 'Music Off';
+      } else {
+        backgroundMusic.play();
+        musicToggleBtn.textContent = 'Music On';
+      }
+      isMusicPlaying = !isMusicPlaying;
+    });
+  </script>
+  
+  
 </body>
 </html>

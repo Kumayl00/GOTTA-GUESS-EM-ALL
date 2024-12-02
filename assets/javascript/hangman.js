@@ -52,9 +52,9 @@ function fetchPokemon() {
   // Generate a random ID within the selected range
   randomId = Math.floor(Math.random() * (maxId - minId + 1)) + minId;
    // Start or restart background music
-  bgMusic.loop = true; // Loop the background music
-  bgMusic.volume = 0.3; // Set the volume to 30%
-  bgMusic.play(); // Play the music
+  // bgMusic.loop = true; // Loop the background music
+  // bgMusic.volume = 0.3; // Set the volume to 30%
+  // bgMusic.play(); // Play the music
   fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}/`)
     .then(response => response.json())
     .then(data => {
