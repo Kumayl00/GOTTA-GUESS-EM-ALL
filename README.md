@@ -130,7 +130,16 @@ When a Pokemon is correctly guessed:
 A new audio element (const audio) is created using the Pokemon's randomId. The cry audio file is retrieved directly from the https://pokemoncries.com website.
 The audio.play() function then plays the Pokemon's cry sound.
 
-## Summary
+# Validation
+
+## HTML
+## Index Page
+![screenshot of w3 validation of index page](assets/images/w3validator_index.jpg)
+
+## Game Page
+![screenshot of w3 validation of game page](assets/images/w3validator_game.jpg)
+
+# Summary
 Our project combines several elements to create an engaging Pokemon guessing game:
 - It uses the PokeAPI to dynamically select Pokemon and retrieve their information.
 - It provides visual feedback with letter reveals, image displays, and stat reveals.
