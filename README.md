@@ -1,4 +1,3 @@
-=======
 #Gotta Guess 'Em All!
 
 ##Chosen Idea
