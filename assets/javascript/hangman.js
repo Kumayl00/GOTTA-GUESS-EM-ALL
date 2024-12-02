@@ -28,7 +28,7 @@ let pokemonAbility2 = '';
 
 // Fetch a random Pokémon from the API
 function fetchPokemon() {
-   randomId = Math.floor(Math.random() * 150) + 1; // First 150 Pokémon
+   randomId = Math.floor(Math.random() * 1010) + 1; // First 150 Pokémon
    // Start or restart background music
   bgMusic.loop = true; // Loop the background music
   bgMusic.volume = 0.3; // Set the volume to 30%
@@ -207,12 +207,14 @@ function handleGuess(letter, button) {
   if (randomWord.includes(letter)) {
     correctLetters.push(letter);
     correctSound.currentTime = 0; // Reset the sound if played before
+    correctSound.volume = 0.3; // Set the volume to 30%
     correctSound.play(); // Play correct guess sound
     displayWord();
   } else {
     wrongLetters.push(letter);
     guessesLeft--;
     wrongSound.currentTime = 0; // Reset the sound if played before
+    wrongSound.volume = 0.3; // Set the volume to 30%
     wrongSound.play(); // Play wrong guess sound
     guessesLeftElement.innerText = guessesLeft;
     wrongLettersElement.innerText = wrongLetters.join(', ');
