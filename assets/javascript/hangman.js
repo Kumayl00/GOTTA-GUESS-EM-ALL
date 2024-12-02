@@ -268,6 +268,9 @@ playAgainButton.addEventListener('click', () => {
 });
 
 document.getElementById('generation-select').addEventListener('change', () => {
+  correctSound.currentTime = 0; // Reset the sound if played before
+  correctSound.volume = 0.3; // Set the volume to 30%
+  correctSound.play(); // Play correct guess sound
   fetchPokemon();
 });
 
