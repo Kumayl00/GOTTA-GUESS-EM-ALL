@@ -157,7 +157,7 @@ function displayWord() {
     pokemonImage.src = randomImage;
     pokemonImage.alt = ` picture of ${randomWord}`;
     pokemonStats.innerHTML = `
-      <h3>${pokemonName.toUpperCase()} #${randomId}</h3>
+      <h3>${pokemonName.toUpperCase()} No.${randomId}</h3>
       <p>Type: ${pokemonType}</p>
       <p>Height: ${pokemonHeight} dm</p>
       <p>Weight: ${pokemonWeight} hg</p>
