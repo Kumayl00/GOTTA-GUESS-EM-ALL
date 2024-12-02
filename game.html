@@ -20,7 +20,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      margin: 2rem 5rem;
+      margin: 2rem 2rem;
     }
     .nes-btn {
       margin: 5px;
@@ -43,11 +43,18 @@
       margin: 2rem;
       width: 150px;
       height: 150px;
+      
+    }
+
+    #pokemon-stats {
+      text-align: right;
     }
 
     #message {
       font-size: 1.5rem;
       margin-top: 20px;
+      justify-self: center;
+      text-align: center;
     }
 
     #guesses-left-div {
@@ -57,13 +64,32 @@
     #imgContainer {
       display: flex;
       justify-content: center;
+      margin-inline: 2rem;
     }
+
+ 
 
 
 #heading {
   text-align: center;
   margin: 1rem;
+  margin-top: 10rem;
 }
+
+    #play-again-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    #play-again {
+      display: none;
+      margin: 20px;
+    }
+
+    #genSelect {
+      margin: 20px;
+      text-align: center;
+    }
 
   </style>
 
@@ -71,18 +97,39 @@
 <link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
 
 </head>
-<body>
-  <h1 id="heading">Pokémon Hangman</h1>
-  <div id="imgContainer">
-  <img id="pokemon-image" alt="Pokémon" src="assets/images/pokeball.png">
+<div class="container flex">
+  <body>
+    <h1 id="heading">Pokémon Hangman</h1>
+    <div id="imgContainer">
+    <span><img id="pokemon-image" alt="" src="/assets/images/pokeball.png"></span>
+    <span><p id = "pokemon-stats"></p></span>
+  </div>
+    <div id="word"></div>
+    <div id="alphabet-container"></div>
+    <div id="wrong-letters">Wrong letters: <span id="wrong-letters-list"></span></div>
+    <div id="guesses-left-div">Guesses left: <span id="guesses-left">10</span></div>
+  
+    <div id="message"></div>
+    <div id="play-again-container">
+      <button id="play-again" style="display: none;">Play Again</button>
+    </div>
+    <!-- <div id="generation-select"></div> -->
+    <div id="genSelect">
+      <label for="generation-select">Select Pokémon Generation:</label>
+      <select id="generation-select">
+        <option value="1">Generation 1 (1-151)</option>
+        <option value="2">Generation 2 (152-251)</option>
+        <option value="3">Generation 3 (252-386)</option>
+        <option value="4">Generation 4 (387-493)</option>
+        <option value="5">Generation 5 (494-649)</option>
+        <option value="6">Generation 6 (650-721)</option>
+        <option value="7">Generation 7 (722-809)</option>
+        <option value="8">Generation 8 (810-898)</option>
+        <option value="9">Generation 9 (899-1010)</option>
+        <option value="10">Guess Em' All! (1-1010)</option>
+      </select>
+    </div>
 </div>
-  <div id="word"></div>
-  <div id="alphabet-container"></div>
-  <div id="wrong-letters">Wrong letters: <span id="wrong-letters-list"></span></div>
-  <div id="guesses-left-div">Guesses left: <span id="guesses-left">10</span></div>
-
-  <div id="message"></div>
-  <button id="play-again" style="display: none;">Play Again</button>
 
   <script src="assets/javascript/hangman.js"></script>
 </body>

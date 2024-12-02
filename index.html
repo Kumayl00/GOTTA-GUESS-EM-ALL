@@ -47,18 +47,27 @@
                 </div>
 
                 <!-- Instructions Modal -->
-                <dialog class="nes-dialog" id="dialog-default">
-                    <form method="dialog">
-                        <p class="title"><strong>Instructions</strong></p>
-                        <p>You will be given a random Pokemon to guess</p><br>
-                        <p>You will have 10 wrong guesses</p><br>
-                        <p>Good luck!</p>
-
-                        <menu class="dialog-menu">
-                            <button class="nes-btn is-primary">OK</button>
-                        </menu>
-                    </form>
-                </dialog>
+                <div class="modal fade" id="instructionsModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content text-center">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Instructions</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div id="modalBall" class="p-3">
+                                <img src="assets/images/pokeball.png" alt="image of interface" id="interface_preview">
+                            </div>
+                            <div class="modal-body">
+                                Instructions to go here
+                            </div>
+                            <div class="modal-footer align-self-center">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
 
 
