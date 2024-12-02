@@ -22,6 +22,7 @@ const generationRanges = {
   7: [722, 809],
   8: [810, 898],
   9: [899, 1010],
+  10: [1, 1010],
 };
 
 let randomId;
