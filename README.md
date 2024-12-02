@@ -130,6 +130,66 @@ When a Pokemon is correctly guessed:
 A new audio element (const audio) is created using the Pokemon's randomId. The cry audio file is retrieved directly from the https://pokemoncries.com website.
 The audio.play() function then plays the Pokemon's cry sound.
 
+# JavaScript Features
+
+## 1. Handling Awkward Pokémon Names
+Some Pokémon names in the PokéAPI dataset include special characters or alternate forms that could cause issues when matching or displaying names. To handle these, we implemented a data map for name overrides.
+For example:
+
+"nidoran-f" and "nidoran-m" are standardized to "nidoran".
+Alternate forms like "mr-mime", "lycanroc-midday", and "deoxys-normal" are simplified to "mrmime", "lycanroc", and "deoxys".
+This ensures consistent handling of Pokémon names across different parts of the game.
+```javascript
+...        "iron-hands": "ironhands",
+        "iron-jugulis": "ironjugulis",
+        "iron-moth": "ironmoth",
+        "iron-thorns": "ironthorns",
+        "wo-chien": "wochien",
+        "chien-pao": "chienpao",
+        "ting-lu": "tinglu",
+        "chi-yu": "chiyu",
+        "roaring-moon": "roaringmoon",
+        "iron-valiant": "ironvaliant",
+        "walking-wake": "walkingwake",
+        "iron-leaves": "ironleaves"
+      };
+      
+      if (nameOverrides[data.name.toLowerCase()]) {
+        randomWord = nameOverrides[data.name.toLowerCase()];
+      } else {
+        randomWord = data.name.toLowerCase();
+      }
+```
+## 2. Generation Selector
+To give players the option to choose Pokémon from specific generations, we created a generation selector. Each generation corresponds to a specific range of Pokémon IDs, defined in a generationRanges object. For example:
+
+Generation 1: IDs 1-151
+Generation 2: IDs 152-251
+Generation 10 (all generations): IDs 1-1010
+When a generation is selected, the code dynamically calculates a random ID within the chosen range and fetches the corresponding Pokémon.
+
+## 3. Dynamic Pokémon Sound Effects
+Pokémon sound effects (cries) are played dynamically by constructing a URL based on the Pokémon's ID. Since the sound file structure differs for IDs below and above 650, the code intelligently selects the correct URL:
+
+For IDs < 650, the URL is:
+https://pokemoncries.com/cries-old/{id}.mp3
+
+For IDs >= 650, the URL is:
+https://pokemoncries.com/cries/{id}.mp3
+
+This ensures the correct sound effect is played, regardless of the Pokémon's ID.
+
+## 4. Using Optional Chaining for Error Prevention
+The PokéAPI does not guarantee that all Pokémon have multiple abilities, which can cause errors when trying to access properties like data.abilities[1].ability.name. To handle this, we used optional chaining (?.), which safely checks for the existence of these properties:
+
+
+```javascript
+pokemonAbility1 = data.abilities[0]?.ability.name || 'N/A';
+pokemonAbility2 = data.abilities[1]?.ability.name || 'N/A';
+```
+If the ability or index does not exist, the code gracefully falls back to "N/A". This prevents runtime errors and ensures a smooth user experience.
+
+
 # Validation
 
 ## HTML
