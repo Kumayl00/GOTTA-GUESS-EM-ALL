@@ -27,75 +27,54 @@ We created wireframes using Balsamiq to plan the layout and functionality of our
 ![wireframe of the landing page](assets/images/Homepage.png)
 Page the user will initially reach
 
-#Gotta Guess 'Em All!
-
-##Chosen Idea
-We decided to put a creative twist on the classic Hangman game by incorporating content from the Pokémon API (pokeapi.co), allowing users to guess the names of Pokémon. The word to guess will be drawn from the API using a random number generator, leveraging the extensive database of over 1,000 Pokémon. 
-
-##Target Audience
-Our target audience consists of individuals who are familiar with Pokémon. People may have fond memories of the classic Game Boy games and their nostalgic aesthetic.
-
-##Main Features
-- Randomly generate a Pokémon for users to guess.  
-- Display the correctly guessed Pokémon upon success.  
-- Responsive design compatible with multiple screen sizes.  
-- Nostalgic design inspired by the classic Game Boy games.
-
-#Wireframes
-We created wireframes using Balsamiq to plan the layout and functionality of our application, ensuring a clear and user-friendly design.
-
-##Landing Page
-![wireframe of the landing page](assets/images/Homepage.png)
-Page the user will initially reach
-
-##Instructions Modal
+## Instructions Modal
 ![wireframe of the instructions modal on the homepage](assets/images/Instructions.png)
 Instructions modal launched on the homepage
 
-##Game Screen
+## Game Screen
 ![layout of the interface when the user is playing the game](assets/images/Game-Guessing.png)
 Game interface design
 
-##Game Success
+## Game Success
 ![wireframe showing the screen with a completed answer](assets/images/Game-Success.png)
 Completed game - sprite of the guessed Pokemon is shown
 
-#Assets
+# Assets
 We chose assets that were in-keeping with the Pokemon aesthetic.
 
-##Fonts
+## Fonts
 We chose the 'PocketMonk' and 'Pokemon Classic' fonts for this project. 
 
-##Colour Scheme
+## Colour Scheme
 
 ![picture showing swatch of colour scheme. similar to Pokemon colours](assets/images/color_scheme.jpeg)
 
 A colour scheme similar to the branding of the original Pokemon was used. This was taken from Adobe Colours. 
 
-###Pokemon Classic
+### Pokemon Classic
 
 ![preview of the pokemon classic font](assets/images/Pokemon_Classic_preview.png)
 
 We chose this font as a nod to the original Gameboy games. We think that our target audience will recognise this font, adding nostalgia value.
 
-###Pocketmonk
+### Pocketmonk
 ![preview of the Pocketmonk font - similar to the original Pokemon logo typeface](assets/images/PocketMonk_preview.png)
 
 Drawing on the design language of Pokemon, we chose this font.
 
-###Licensing
+### Licensing
 Pocketmonk is used under "non-commercial" lisence purposes. See lisence file <a href="assets/images/font_license.pdf">here.<a/>
 Pokemon Classic was used under permission from the author.
 
-##API
+## API
 ![pokeAPI logo](assets/images/pokeAPI_logo.png)
 We chose the Pokeapi (pokeapi.co). The API is free and open to use under the terms of it's <a href="https://pokeapi.co/docs/v2">fair use policy</a>. It contains tens of thousands of invidiual items including name, sprites, moves and abilities. The wealth of information on offer gives us a large scope in terms of future potential features.
 
-##NES.css Library
+## NES.css Library
 ![NES.css logo](assets/images/NES_logo.png)
 Drawing on our nostaligic theme, we found an CSS library which applies retro styling. The library includes styled buttons with animations, which we applied to our interface.
 
-#Functionality of Game
+# Functionality of Game
 
 ## Targetted elements in the HTML
 The code first identifies and links to specific elements on the webpage that are essential for the game, such as:
@@ -132,7 +111,7 @@ Game messages are cleared, and the "Play Again" button is hidden.
 The display is updated to show the initial game state (blank spaces for the word, the number of guesses remaining).
 Functions displayWord and createAlphabetButtons are called to set up the word display and create the alphabet buttons for guessing.
 
-#Playing the Game:
+# Playing the Game:
 The displayWord function shows the Pokemon name with unguessed letters as underscores:
 The randomWord is split into individual letters.
 If a letter has been correctly guessed, it's displayed; otherwise, an underscore represents it.
@@ -152,13 +131,13 @@ If the player runs out of guesses, a game over message reveals the Pokemon's nam
 The endGame function disables all letter buttons and reveals the "Play Again" button.
 Clicking the "Play Again" button triggers fetchPokemon to choose a new Pokemon and begin a new round.
 
-#Pokemon Cries:
+# Pokemon Cries:
 The code plays the Pokemon's distinctive cry when the player guesses the name correctly. This is achieved using the https://pokemoncries.com website.
 When a Pokemon is correctly guessed:
 A new audio element (const audio) is created using the Pokemon's randomId. The cry audio file is retrieved directly from the https://pokemoncries.com website.
 The audio.play() function then plays the Pokemon's cry sound.
 
-#Summary
+# Summary
 Our project combines several elements to create an engaging Pokemon guessing game:
 It uses the PokeAPI to dynamically select Pokemon and retrieve their information.
 It provides visual feedback with letter reveals, image displays, and stat reveals.
