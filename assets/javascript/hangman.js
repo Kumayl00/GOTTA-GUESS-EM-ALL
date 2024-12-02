@@ -262,8 +262,8 @@ function endGame() {
 
 // Add event listener for Play Again button
 playAgainButton.addEventListener('click', () => {
-  bgMusic.currentTime = 0; // Reset the music to the beginning
-  bgMusic.play(); // Play the music again
+  // bgMusic.currentTime = 0; // Reset the music to the beginning
+  // bgMusic.play(); // Play the music again
   fetchPokemon();
 });
 
